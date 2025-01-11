@@ -1,0 +1,64 @@
+% CSVファイルを読み込む
+
+%Names = string(T.Properties.VariableNames);
+
+inputTable = struct('times', [], 'InitDistance', [], 'EgoInitSpeed', [], 'EgoTargetSpeed', [], 'EgoAcceleration', [] ...
+                    ,'ActorInitSpeed', [],'ActorReactionTime', [],'ActorTargetSpeed', [],'ActorAcceleration', []);
+
+range_dis = 82:104;
+range_actInitSpeed = 30:2:48;
+range_actAcc = [0.5,1.5,2.5];
+range_actReactionTime = [1,1.5,2];
+
+default_times = 1;
+
+default_egoInitSpeed = 0;
+default_egoTargetSpeed = 10;
+default_egoAcceleration = 2.9;
+
+default_actReactionTime = 100;
+default_actorTargetSpeed = 40;
+default_actAcc = 0;
+
+for dis = range_dis
+    for sp = range_actInitSpeed
+
+        
+        if sp > 40
+            for acc = range_actAcc
+                for rea = range_actReactionTime
+                            inputTable.times(end+1) = default_times;
+        inputTable.InitDistance(end+1) = dis;
+        inputTable.EgoInitSpeed(end+1) = default_egoInitSpeed;
+        inputTable.EgoTargetSpeed(end+1) = default_egoTargetSpeed;
+        inputTable.EgoAcceleration(end+1) = default_egoAcceleration;
+        inputTable.ActorInitSpeed(end+1) = sp;
+                        inputTable.ActorReactionTime(end+1) = rea;
+                        inputTable.ActorAcceleration(end+1) = acc;
+                        
+                end
+            end
+        else
+            inputTable.ActorReactionTime(end+1) = default_actReactionTime;
+            inputTable.ActorAcceleration(end+1) = default_actAcc;   
+        end
+    end
+end
+
+% for dis = 1:length(range_dis)
+%     for sp = 1:length(range_actInitSpeed)
+% 
+% 
+% 
+%         if sp > 40
+%             disp("do")
+%             for acc = 1:length(range_actAcc)
+%                 for rea = 1:length(range_actReactionTime)
+%                         inputTable.ActorReactionTime(end+1) = rea;
+%                         inputTable.ActorAcceleration(end+1) = acc;
+% 
+%                 end
+%             end
+%         end
+%     end
+% end

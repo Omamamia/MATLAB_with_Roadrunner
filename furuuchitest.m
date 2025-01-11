@@ -2,41 +2,78 @@
 
 %Names = string(T.Properties.VariableNames);
 
-inputTable = readtable('inputTable.csv');
+inputTable = struct('times', [], 'InitDistance', [], 'EgoInitSpeed', [], 'EgoTargetSpeed', [], 'EgoAcceleration', [] ...
+                    ,'ActorInitSpeed', [],'ActorReactionTime', [],'ActorTargetSpeed', [],'ActorAcceleration', []);
 
-for j = 1:height(inputTable)
-    simtimes = inputTable.times(j);
-    value_dis = inputTable.InitDistance(j);%初期のegoとactの距離
-    value_egoInitSpeed = inputTable.EgoInitSpeed(j);%egoの初期速度
-    value_egoTargetSpeed = inputTable.EgoTargetSpeed(j);%egoの変更後速度
-    value_egoAcc = inputTable.EgoAcceleration(j);%egoの加速度
-    value_actInitSpeed = inputTable.ActorInitSpeed(j);%actorの初期速度
-    value_actReactionTime = inputTable.ActorReactionTime(j);%actorの速度変更までの時間
-    value_actTargetSpeed = inputTable.ActorTargetSpeed(j);%acotrの変更後速度
-    value_actAcc = inputTable.ActorAcceleration(j);%actorの加速度
+range_dis = 82:2:104;
+range_actInitSpeed = 30:48;
+range_actAcc = [0.5,1.5,2.5];
+range_actReactionTime = [1,1.5,2];
+
+default_times = 1;
+
+default_egoInitSpeed = 0;
+default_egoTargetSpeed = 10;
+default_egoAcceleration = 2.9;
+
+default_actReactionTime = 100;
+default_actorTargetSpeed = 40;
+default_actAcc = 0;
+
+
+for sp = range_actInitSpeed
+    for dis = range_dis
+        
+        if sp > 40
+            for acc = range_actAcc
+                for rea = range_actReactionTime
+                        inputTable.times(end+1) = default_times;
+                        inputTable.InitDistance(end+1) = dis;
+                        inputTable.EgoInitSpeed(end+1) = default_egoInitSpeed;
+                        inputTable.EgoTargetSpeed(end+1) = default_egoTargetSpeed;
+                        inputTable.EgoAcceleration(end+1) = default_egoAcceleration;
+                        inputTable.ActorInitSpeed(end+1) = sp;
+                        inputTable.ActorTargetSpeed(end+1) = default_actorTargetSpeed;
+
+                        inputTable.ActorReactionTime(end+1) = rea;
+                        inputTable.ActorAcceleration(end+1) = acc;
+                        
+                end
+            end
+        else
+            inputTable.times(end+1) = default_times;
+            inputTable.InitDistance(end+1) = dis;
+            inputTable.EgoInitSpeed(end+1) = default_egoInitSpeed;
+            inputTable.EgoTargetSpeed(end+1) = default_egoTargetSpeed;
+            inputTable.EgoAcceleration(end+1) = default_egoAcceleration;
+            inputTable.ActorInitSpeed(end+1) = sp;
+            inputTable.ActorTargetSpeed(end+1) = sp;
+
+            inputTable.ActorReactionTime(end+1) = default_actReactionTime;
+            inputTable.ActorAcceleration(end+1) = default_actAcc;   
+        end
+    end
 end
-% 保存
-% for j = 1:height(inputTable)
-%     for i = 1:width(Names)
-%             disp(inputTable.(Names(i))(j))       
-%     end
-% end
-%writetable(T, 'simpleResult.csv');
-% 
-% dis = "InitDistance";%初期のegoとactの距離
-% egoInitSpeed = "EgoInitSpeed";%egoの初期速度
-% egoTargetSpeed = "EgoTargetSpeed";%egoの変更後速度
-% egoAcc = "EgoAcceleration";%egoの加速度
-% actInitSpeed = "ActorInitSpeed";%actorの初期速度
-% actReactionTime = "ActorReactionTime";%actorの速度変更までの時間
-% actTargetSpeed = "ActorTargetSpeed";%acotrの変更後速度
-% actAcc = "ActorAcceleration";%actorの加速度
-% 
-% value_dis = 82.8;%初期のegoとactの距離
-% value_egoInitSpeed = 0;%egoの初期速度
-% value_egoTargetSpeed = 10;%egoの変更後速度
-% value_egoAcc = 1.6;%egoの加速度
-% value_actInitSpeed = 40;%actorの初期速度
-% value_actReactionTime = 1000;%actorの速度変更までの時間
-% value_actTargetSpeed = 40;%acotrの変更後速度
-% value_actAcc = 0;%actorの加速度
+
+% 構造体を縦長に展開
+numEntries = numel(inputTable.times); % 構造体のエントリ数
+expandedTable = table();
+
+% 各フィールドをテーブル形式に変換して結合
+expandedTable.times = inputTable.times(:);
+expandedTable.InitDistance = inputTable.InitDistance(:);
+expandedTable.EgoInitSpeed = inputTable.EgoInitSpeed(:);
+expandedTable.EgoTargetSpeed = inputTable.EgoTargetSpeed(:);
+expandedTable.EgoAcceleration = inputTable.EgoAcceleration(:);
+expandedTable.ActorInitSpeed = inputTable.ActorInitSpeed(:);
+expandedTable.ActorReactionTime = inputTable.ActorReactionTime(:);
+expandedTable.ActorTargetSpeed = inputTable.ActorTargetSpeed(:);
+expandedTable.ActorAcceleration = inputTable.ActorAcceleration(:);
+
+% CSVファイルとして保存
+csvFileName = 'inputTable_vertical.csv'; % 保存するファイル名
+writetable(expandedTable, csvFileName);
+
+% 保存完了メッセージ
+disp(['縦長のCSVファイルとして保存しました: ' csvFileName]);
+

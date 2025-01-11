@@ -2,8 +2,11 @@ classdef controlSimDatas < handle
     properties
 		dataRealtime = struct('time', [], 'egoVelocity', [], 'egoSpeed', [] ,'egoAcc',[], 'actVelocity', [], 'actSpeed', [] ,'actAcc',[],'dis', [],'isCollision',[]);
         previousData = struct('time', [], 'egoSpeed', [], 'actSpeed', []);
-        simpleResults = struct('times', [], 'egoAcc', [], 'actVel', [], 'actAcc', [], 'disInit', [],'DTC', [],'PET', [],'isCollision', []);
+        simpleResults = struct('times',[], 'actRea',  [], 'egoAcc', [], 'actVel', [], 'actAcc', [], 'disInit', [],'DTC', [],'PET', [],'isCollision', []);
         jsonDataRealtime
+
+                    isEgoCompletedTime = 999999;
+            isActCompletedTime = 999999;
 
         disMin
              
@@ -41,8 +44,9 @@ classdef controlSimDatas < handle
             obj.PET = 0;
         end
 
-        function createSimpleResultStruct(obj,egoAcc,actVel,actAcc)
+        function createSimpleResultStruct(obj,actRea,egoAcc,actVel,actAcc)
             obj.simpleResults.times = obj.n;
+            obj.simpleResults.actRea = mod(actRea , 100);
             obj.simpleResults.egoAcc = egoAcc;
             obj.simpleResults.actVel = actVel;
             obj.simpleResults.actAcc = actAcc;
@@ -95,6 +99,8 @@ classdef controlSimDatas < handle
         
         function CreateLogStructs(obj,egoVel,actVel,egoPos,actPos,isCollision,InitDis,fieldName)
 
+
+
             obj.dataLog = struct(   'isCollision', isCollision, ...
                              'InitDis', InitDis, ...
                              'SimulationTime', egoVel(length(egoVel)).Time ,...
@@ -127,11 +133,13 @@ classdef controlSimDatas < handle
 
                 if obj.dataLog.(fieldName)(i).egoSpeed == 0 && obj.dataLog.(fieldName)(i).egoAcc < 0
                     obj.isEgoCompleted = true;
+                    obj.isEgoCompletedTime = obj.dataLog.(fieldName)(i).time;
                 end
 
                 if obj.dataLog.(fieldName)(i).actSpeed < 0.001 && obj.dataLog.(fieldName)(i).actAcc < 0 && obj.isActCompleted == false
                     obj.isActCompleted = true;
-                    obj.PET = obj.dataLog.(fieldName)(i).time;
+                    obj.isActCompletedTime = obj.dataLog.(fieldName)(i).time;
+                    obj.PET = obj.isActCompletedTime - 4500;
                 end
                               
                 

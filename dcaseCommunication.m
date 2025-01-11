@@ -38,7 +38,7 @@ classdef dcaseCommunication < handle
             if isfield(authData, 'authID')
                 authID = authData.authID;
                 obj.authID = authID;
-                fprintf('認証成功。authID: %s\n', authID);
+%                fprintf('認証成功。authID: %s\n', authID);
             else
                 error('認証に失敗しました。');
             end
@@ -54,11 +54,11 @@ classdef dcaseCommunication < handle
                 urlencode(obj.partsID), ...
                 jsonencode(obj.userList), ...
                 formatedParamList);
-            disp(uploadData)
+      %      disp(uploadData)
             options = weboptions('RequestMethod', 'post', 'ContentType', 'text');
             response = webwrite(obj.uploadUrl, uploadData, options);
             
-            fprintf('アップロード結果: %s\n', response);
+    %        fprintf('アップロード結果: %s\n', response);
         end
 
     end

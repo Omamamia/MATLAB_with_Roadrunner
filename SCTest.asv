@@ -48,15 +48,13 @@ try
 		%上記2つのパラメータをシミュレーションに設定
     set(rrSim,'MaxSimulationTime',maxSimulationTimeSec);
     set(rrSim,'StepSize',StepSize);
-    
-    set(rrSim,PacerStatus="On")  
-    set(rrSim,SimulationPace=20)  
+
 		%シミュレーション回数を決定
     %maxSimulationTimes = 10;
     %シミュレーションで得るデータを格納するクラスを定義
    % SimDatas = controlSimDatas(value_egoInitSpeed,value_actInitSpeed, 1);
 
-    inputTable = readtable('inputTest.csv');
+    inputTable = readtable('inputTable2.csv');
 
     for j = 1:height(inputTable)
 
@@ -180,21 +178,18 @@ try
     
             end
             T = struct2table(SimDatas.simpleResults);
-%            sortedT = sortrows(T, 'actRea');
+            sortedT = sortrows(T, 'actRea');
             if isfile(csvName)
                 
-                writetable(T, csvName, 'WriteMode', 'append');
+                writetable(sortedT, csvName, 'WriteMode', 'append');
             else
-                writetable(T, csvName);
+                writetable(sortedT, csvName);
             end
     
         end
 
     end
-    
-    sortedT = sortrows(readtable(csvName), 'actRea');
-    writetable(sortedT, csvName);
-        
+
     % value_egoInitSpeed = value_egoInitSpeed / 3.6;%egoの初期速度
     % value_egoTargetSpeed = value_egoTargetSpeed / 3.6;%egoの変更後速度
     % value_actInitSpeed = value_actInitSpeed / 3.6;%actorの初期速度
@@ -234,7 +229,7 @@ function createJsonFile(filename,  jsonData)
     try
         % ファイルが存在するかチェック
         if exist(filename, 'file')
-   %         disp("ファイルを上書きします")
+            disp("ファイルを上書きします")
         end
         
         % 新規ファイルの作成
