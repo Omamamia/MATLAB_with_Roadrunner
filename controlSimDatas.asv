@@ -1,8 +1,8 @@
 classdef controlSimDatas < handle
     properties
-		dataRealtime = struct('time', [], 'egoVelocity', [], 'egoSpeed', [] ,'egoAcc',[], 'actVelocity', [], 'actSpeed', [] ,'actAcc',[],'dis', [],'isCollision',[]);
-        previousData = struct('time', [], 'egoSpeed', [], 'actSpeed', []);
-        simpleResults = struct('times','actRea', [],  [], 'egoAcc', [], 'actVel', [], 'actAcc', [], 'disInit', [],'DTC', [],'PET', [],'isCollision', []);
+		dataRealtime = struct('time', [],'egoAngularVelocity', [], 'egoVelocity', [], 'egoSpeed', [] ,'egoAcc',[], 'actVelocity', [], 'actSpeed', [] ,'actAcc',[],'dis', [],'isCollision',[]);
+        previousData = struct('time', [],'egoAngularVelocity', [], 'egoSpeed', [],'egoSpeedHorizontal', [],'egoSpeed', [], 'actSpeed', []);
+        simpleResults = struct('times',[], 'actRea',  [], 'egoAcc', [], 'actVel', [], 'actAcc', [], 'disInit', [],'DTC', [],'PET', [],'isCollision', []);
         jsonDataRealtime
 
                     isEgoCompletedTime = 999999;
@@ -44,9 +44,9 @@ classdef controlSimDatas < handle
             obj.PET = 0;
         end
 
-        function createSimpleResultStruct(obj,egoAcc,actVel,actAcc)
+        function createSimpleResultStruct(obj,actRea,egoAcc,actVel,actAcc)
             obj.simpleResults.times = obj.n;
-            
+            obj.simpleResults.actRea = mod(actRea , 100);
             obj.simpleResults.egoAcc = egoAcc;
             obj.simpleResults.actVel = actVel;
             obj.simpleResults.actAcc = actAcc;
@@ -59,7 +59,7 @@ classdef controlSimDatas < handle
 
         end
 
-        function CreateRealtimeStructs(obj,time,egoVel,actVel,egoPos,actPos,isCollision)
+        function CreateRealtimeStructs(obj,time,egoVel,actVel,egoAngVel,egoPos,actPos,isCollision)
                 obj.dataRealtime.time  = time;
 
                 obj.dataRealtime.egoVelocity = egoVel;
@@ -97,7 +97,7 @@ classdef controlSimDatas < handle
 %                createJsonFile('realtime.json',obj.jsonDataRealtime)
         end
         
-        function CreateLogStructs(obj,egoVel,actVel,egoPos,actPos,isCollision,InitDis,fieldName)
+        function CreateLogStructs(obj,egoVel,actVel,egoPos,actPos,isCollision,InitDis,egoAngVelLog,fieldName)
 
 
 
@@ -109,14 +109,25 @@ classdef controlSimDatas < handle
         
             for i = 1:length(egoVel)
                 obj.dataLog.(fieldName)(i).time = egoVel(i).Time*1000;
+
+                obj.dataLog.(fieldName)(i).egoAngVelLog = rad2deg(egoAngVelLog(i).AngularVelocity(3));
         
                 obj.dataLog.(fieldName)(i).egoVelocity =egoVel(i).Velocity;
                 obj.dataLog.(fieldName)(i).egoSpeed = norm(egoVel(i).Velocity);
+                obj.dataLog.(fieldName)(i).egoSpeedHorizontal = obj.dataLog.(fieldName)(i).egoSpeed * sind(obj.dataLog.(fieldName)(i).egoAngVelLog);
+                obj.dataLog.(fieldName)(i).egoSpeedVertical = obj.dataLog.(fieldName)(i).egoSpeed * cosd(obj.dataLog.(fieldName)(i).egoAngVelLog);
         
                 if i == 1
                     obj.dataLog.(fieldName)(i).egoAcc = 0; 
+                    obj.dataLog.(fieldName)(i).egoAccVertical = 0; 
+
+                    obj.dataLog.(fieldName)(i).egoAccHorizontal = 0; 
                 else
                     obj.dataLog.(fieldName)(i).egoAcc = (obj.dataLog.(fieldName)(i).egoSpeed - obj.dataLog.(fieldName)(i - 1).egoSpeed) ...
+                       / (obj.dataLog.(fieldName)(i).time - obj.dataLog.(fieldName)(i - 1).time) * 1000;
+                    obj.dataLog.(fieldName)(i).egoAccVertical = (obj.dataLog.(fieldName)(i).egoSpeedVertical - obj.dataLog.(fieldName)(i - 1).egoSpeedVertical) ...
+                       / (obj.dataLog.(fieldName)(i).time - obj.dataLog.(fieldName)(i - 1).time) * 1000;
+                    obj.dataLog.(fieldName)(i).egoAccHorizontal = (obj.dataLog.(fieldName)(i).egoSpeedHorizontal - obj.dataLog.(fieldName)(i - 1).egoSpeedHorizontal) ...
                        / (obj.dataLog.(fieldName)(i).time - obj.dataLog.(fieldName)(i - 1).time) * 1000;
                 end
         
@@ -139,7 +150,7 @@ classdef controlSimDatas < handle
                 if obj.dataLog.(fieldName)(i).actSpeed < 0.001 && obj.dataLog.(fieldName)(i).actAcc < 0 && obj.isActCompleted == false
                     obj.isActCompleted = true;
                     obj.isActCompletedTime = obj.dataLog.(fieldName)(i).time;
-                    obj.PET = obj.isActCompletedTime - 0.45;
+                    obj.PET = obj.isActCompletedTime - obj.isEgoCompletedTime  ;
                 end
                               
                 

@@ -6,10 +6,11 @@ try
     dcaseID = 'no58NkJvu366jusJSMypnstDt1_EOYr0J6Hrf8PSgsI_';
     partsID = 'Parts_fcx90cjb';
     userList = {'uaw_rebPBN_g9oDNrRmD0vs71jRfWeZ2HqZ_lu8idLE_'};
-		%　dcaseとの通信を確率
+
+	% dcaseとの通信を確率
     dcase = dcaseCommunication(email,password,dcaseID,partsID,userList);
     
-    csvName = 'sortTest.csv';
+    csvName = 'TestResult.csv';
 
     % 作業プロジェクト
     rrproj = "/home/furuuchi/ドキュメント/GitHub/Roadrunner";
@@ -29,15 +30,6 @@ try
     actReactionTime = "ActorReactionTime";%actorの速度変更までの時間
     actTargetSpeed = "ActorTargetSpeed";%acotrの変更後速度
     actAcc = "ActorAcceleration";%actorの加速度
-    % 
-    % value_dis = 82.8;%初期のegoとactの距離
-    % value_egoInitSpeed = 0;%egoの初期速度
-    % value_egoTargetSpeed = 10;%egoの変更後速度
-    % value_egoAcc = 1.6;%egoの加速度
-    % value_actInitSpeed = 40;%actorの初期速度
-    % value_actReactionTime = 1000;%actorの速度変更までの時間
-    % value_actTargetSpeed = 40;%acotrの変更後速度
-    % value_actAcc = 0;%actorの加速度
 
     %シミュレーションのログを取れるようにする
     set(rrSim,"Logging","on");
@@ -56,7 +48,7 @@ try
     %シミュレーションで得るデータを格納するクラスを定義
    % SimDatas = controlSimDatas(value_egoInitSpeed,value_actInitSpeed, 1);
 
-    inputTable = readtable('inputTest.csv');
+    inputTable = readtable('inputTable_append.csv');
 
     for j = 1:height(inputTable)
 
@@ -131,7 +123,7 @@ try
             egoPosLog = get(simLog,"Pose","ActorID",1);
             actPosLog = get(simLog,"Pose","ActorID",2);
             %衝突判定の確認
-            collisionMessages = false;%衝突判定
+            collisionMessages = false;%衝突判定csvName
             diagnostics = get(simLog, "Diagnostics");%エラーメッセージがあれば取得
     
             if ~isempty(diagnostics)%エラーメッセージがあるなら
