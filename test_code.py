@@ -10,8 +10,8 @@ import urllib.parse as parse
 ##### 自分の環境に合わせて編集してください #####
 user = 'tier4.jp'
 passwd = 'tier4'
-dcaseID = "jxlSYMp53SIn2BSJHo_5mnXt6Fb0iKKL_KRqfBJ3qao_" # dcase_comのエディター画面のURLを参照
-partsID = "Parts_qypn1wir" # トップゴールのパーツID
+dcaseID = "ZOkeBMC80fOHeAkjkswqBu8hveyXxdtQSJxhDEr4qUw_" # dcase_comのエディター画面のURLを参照
+partsID = "Parts_vlumzlki" # トップゴールのパーツID
 # dcaseID = "vHrQG6R398TkZkaSQ_HJoc5zgeralYjKON_k14nhjdA_" # dcase_comのエディター画面のURLを参照
 # partsID = "Parts_y4omdkeh" # トップゴールのパーツID
 userList = []

@@ -11,11 +11,11 @@ try
     dcase = dcaseCommunication(email,password,dcaseID,partsID,userList);
     
     % 入出力ファイル名の定義
-    inputTableName = 'inputTest.csv';
+    inputTableName = 'inputTable_0130.csv';
     realTimeDataJsonName = 'realtime.json';
     logDataJsonName = 'result.json';
     simpleResultsJsonName = 'resultSimple.json';
-    simpleResultCsvName = 'TestResult.csv';
+    simpleResultCsvName = 'outputTest_0130.csv';
 
     %入力テーブルの格納
     inputTable = readtable(inputTableName);
@@ -25,7 +25,7 @@ try
     % roadrunnerを起動
     rrApp=roadrunner(rrproj,InstallationFolder="/usr/local/RoadRunner_R2024b/bin/glnxa64");
     % シナリオ読み込み、変化に注意。
-    scenarioFile="/home/furuuchi/ドキュメント/GitHub/Roadrunner/Scenarios/Testcase_pre2.rrscenario";
+    scenarioFile="/home/furuuchi/ドキュメント/GitHub/Roadrunner/Scenarios/Testcase_pre2-rightupdate.rrscenario";
     % シナリオを指定して開く
     openScenario(rrApp,scenarioFile);
     rrSim=createSimulation(rrApp);
@@ -36,7 +36,7 @@ try
 
     maxSimulationTimeSec = 15;%シミュレーションの最大時間
     StepSize = 0.02;%何秒ごとにシミュレーションを行うか
-    simulationPace = 1;%何倍の速度で行うか
+    simulationPace = 20;%何倍の速度で行うか
     
     %上記3つのパラメータをシミュレーションに設定
     set(rrSim,'MaxSimulationTime',maxSimulationTimeSec);
@@ -52,7 +52,6 @@ try
     actReactionTime = "ActorReactionTime";%actorの速度変更までの時間
     actTargetSpeed = "ActorTargetSpeed";%acotrの変更後速度
     actAcc = "ActorAcceleration";%actorの加速度
-    pause(10);
 
     for j = 1:height(inputTable)
 
@@ -88,9 +87,7 @@ try
             
             %egoとactorが取得するできるまで待機
             while isempty(ego) || isempty(act)
-                try    dcaseID = 'no58NkJvu366jusJSMypnstDt1_EOYr0J6Hrf8PSgsI_';
-    partsID = 'Parts_fcx90cjb';
-    userList = {'uaw_rebPBN_g9oDNrRmD0vs71jRfWeZ2HqZ_lu8idLE_'};
+                try    
                     ego = Simulink.ScenarioSimulation.find("ActorSimulation", ActorID=uint64(1));
                     act = Simulink.ScenarioSimulation.find("ActorSimulation", ActorID=uint64(2));
                     pause(0.01);  
@@ -101,19 +98,21 @@ try
             
             %シミュレーション実行中の処理
             while strcmp(get(rrSim,"SimulationStatus"),"Running")
-                if ~isempty(ego) && ~isempty(act)%egoとacotorがシミュレーション中で削除されてないなら
-
-                    %リアルタイムでデータを取得し、構造体にする
-                    SimDatas.CreateRealtimeStructs( get(rrSim,"SimulationTime"), ...
-                                                    getAttribute(ego,"Velocity"),getAttribute(act,"Velocity"),getAttribute(act,"AngularVelocity"), ...
-                                                    getAttribute(ego,"Pose"),getAttribute(act,"Pose"), ...
-                                                    '-');
-                    %構造体にしたデータをjsonにする
-                    sendData = SimDatas.jsonDataRealtime;
-                    %jsonにしたデータを保存する
-                    createJsonFile(realTimeDataJsonName,sendData)
-                    %jsonデータをD-caseにアップロードする
-                    dcase.uploadEvalData(sendData);
+                try
+                    if ~isempty(ego) && ~isempty(act)%egoとacotorがシミュレーション中で削除されてないなら
+    
+                        %リアルタイムでデータを取得し、構造体にする
+                        SimDatas.CreateRealtimeStructs( get(rrSim,"SimulationTime"), ...
+                                                        getAttribute(ego,"Velocity"),getAttribute(act,"Velocity"),getAttribute(act,"AngularVelocity"), ...
+                                                        getAttribute(ego,"Pose"),getAttribute(act,"Pose"), ...
+                                                        '-');
+                        %構造体にしたデータをjsonにする
+                        sendData = SimDatas.jsonDataRealtime;
+                        %jsonにしたデータを保存する
+                        createJsonFile(realTimeDataJsonName,sendData)
+                        %jsonデータをD-caseにアップロードする
+                        dcase.uploadEvalData(sendData);
+                    end
                 end
                 
                 pause(1);%一秒待機
@@ -146,9 +145,9 @@ try
             end
     
             if collisionMessages
-                isCollision = 'Failed';%衝突あり(失敗
+                isCollision = true;%衝突あり(失敗
             else
-                isCollision = 'Success';%衝突なし(成功
+                isCollision = false;%衝突なし(成功
             end
             
             lastTime = length(egoVelLog);%シミュレーションの最終時間

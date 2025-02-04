@@ -1,0 +1,141 @@
+{"times":1,"actRea":0,"egoAcc":1,"actSpeed":[],"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success","actVel":39,
+	"times":1,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":2,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":118,"DTC":41.091953178900127,"PET":4459.9999999999991,"CriticalSpeed":70.004159999999985,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":3,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":119,"DTC":47.481410942304784,"PET":5040,"CriticalSpeed":79.10784000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":4,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":120,"DTC":53.22864627575472,"PET":5580,"CriticalSpeed":87.58368,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":5,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":82.8,"DTC":18.842239014461345,"PET":2320,"CriticalSpeed":36.41472,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":6,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":83,"DTC":22.540973219727938,"PET":2659.9999999999991,"CriticalSpeed":41.751359999999984,"PETcondition":"risky","CScondition":"safety","isCollision":"Success"
+,
+	"times":7,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":84,"DTC":26.604641984255803,"PET":3020,"CriticalSpeed":47.401920000000004,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":8,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":85,"DTC":30.458438447154858,"PET":3380,"CriticalSpeed":53.05248000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":9,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":86,"DTC":33.877511594404716,"PET":3679.9999999999995,"CriticalSpeed":57.76128,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":10,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":87,"DTC":36.858715534107645,"PET":3960,"CriticalSpeed":62.156160000000007,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":11,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":88,"DTC":39.842363841253331,"PET":4220,"CriticalSpeed":66.23712,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":12,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":89,"DTC":42.606814194274385,"PET":4480,"CriticalSpeed":70.31808,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":13,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":90,"DTC":45.372693320349811,"PET":4720,"CriticalSpeed":74.08512,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":14,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":91,"DTC":47.696987431158206,"PET":4940,"CriticalSpeed":77.53824,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":1,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":2,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":118,"DTC":41.091953178900127,"PET":4459.9999999999991,"CriticalSpeed":70.004159999999985,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":3,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":119,"DTC":47.481410942304784,"PET":5040,"CriticalSpeed":79.10784000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":4,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":120,"DTC":53.22864627575472,"PET":5580,"CriticalSpeed":87.58368,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":5,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":82.8,"DTC":18.842239014461345,"PET":2320,"CriticalSpeed":36.41472,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":6,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":83,"DTC":22.540973219727938,"PET":2659.9999999999991,"CriticalSpeed":41.751359999999984,"PETcondition":"risky","CScondition":"safety","isCollision":"Success"
+,
+	"times":7,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":84,"DTC":26.604641984255803,"PET":3020,"CriticalSpeed":47.401920000000004,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":8,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":85,"DTC":30.458438447154858,"PET":3380,"CriticalSpeed":53.05248000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":9,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":86,"DTC":33.877511594404716,"PET":3679.9999999999995,"CriticalSpeed":57.76128,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":10,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":87,"DTC":36.858715534107645,"PET":3960,"CriticalSpeed":62.156160000000007,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":11,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":88,"DTC":39.842363841253331,"PET":4220,"CriticalSpeed":66.23712,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":12,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":89,"DTC":42.606814194274385,"PET":4480,"CriticalSpeed":70.31808,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":13,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":90,"DTC":45.372693320349811,"PET":4720,"CriticalSpeed":74.08512,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":14,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":91,"DTC":47.696987431158206,"PET":4940,"CriticalSpeed":77.53824,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":1,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":2,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":118,"DTC":34.412994588321318,"PET":3840,"CriticalSpeed":60.27264000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":3,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":119,"DTC":35.406610034893646,"PET":3920,"CriticalSpeed":61.528320000000008,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":4,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":120,"DTC":36.40052481936214,"PET":4020,"CriticalSpeed":63.097920000000016,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":5,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":82.8,"DTC":-0.22484717658490538,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":6,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":83,"DTC":-0.19440631531303421,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":7,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":84,"DTC":0.31289949285837615,"PET":500,"CriticalSpeed":7.848,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":8,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":85,"DTC":1.0248086669551011,"PET":600,"CriticalSpeed":9.4176,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":9,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":86,"DTC":1.8010357949368974,"PET":680,"CriticalSpeed":10.67328,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":10,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":87,"DTC":2.624200005696788,"PET":780,"CriticalSpeed":12.242880000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":11,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":88,"DTC":3.4817884268983539,"PET":860,"CriticalSpeed":13.498560000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":12,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":89,"DTC":4.3652009511815182,"PET":960,"CriticalSpeed":15.068160000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":13,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":90,"DTC":5.2683230951840079,"PET":1040,"CriticalSpeed":16.32384,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":14,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":91,"DTC":6.1866863143225492,"PET":1140,"CriticalSpeed":17.893440000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":1,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":2,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":118,"DTC":34.412994588321318,"PET":3840,"CriticalSpeed":60.27264000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":3,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":119,"DTC":35.406610034893646,"PET":3920,"CriticalSpeed":61.528320000000008,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":4,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":120,"DTC":36.40052481936214,"PET":4020,"CriticalSpeed":63.097920000000016,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":5,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":82.8,"DTC":-0.22484717658490538,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":6,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":83,"DTC":-0.19440631531303421,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":7,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":84,"DTC":0.31289949285837615,"PET":500,"CriticalSpeed":7.848,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":8,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":85,"DTC":1.0248086669551011,"PET":600,"CriticalSpeed":9.4176,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":9,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":86,"DTC":1.8010357949368974,"PET":680,"CriticalSpeed":10.67328,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":10,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":87,"DTC":2.624200005696788,"PET":780,"CriticalSpeed":12.242880000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":11,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":88,"DTC":3.4817884268983539,"PET":860,"CriticalSpeed":13.498560000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":12,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":89,"DTC":4.3652009511815182,"PET":960,"CriticalSpeed":15.068160000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":13,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":90,"DTC":5.2683230951840079,"PET":1040,"CriticalSpeed":16.32384,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":14,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":91,"DTC":6.1866863143225492,"PET":1140,"CriticalSpeed":17.893440000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":1,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":117,"DTC":33.419701747002314,"PET":3740,"CriticalSpeed":58.703040000000009,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":2,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":118,"DTC":34.412994588321318,"PET":3840,"CriticalSpeed":60.27264000000001,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":3,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":119,"DTC":35.406610034893646,"PET":3920,"CriticalSpeed":61.528320000000008,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":4,"actRea":0,"egoAcc":1,"actSpeed":39,"actAcc":0,"disInit":120,"DTC":36.40052481936214,"PET":4020,"CriticalSpeed":63.097920000000016,"PETcondition":"safety","CScondition":"safety","isCollision":"Success"
+,
+	"times":5,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":82.8,"DTC":-0.22484717658490538,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":6,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":83,"DTC":-0.19440631531303421,"PET":0,"CriticalSpeed":0,"PETcondition":"risky","CScondition":"risky","isCollision":"Failed"
+,
+	"times":7,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":84,"DTC":0.31289949285837615,"PET":500,"CriticalSpeed":7.848,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":8,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":85,"DTC":1.0248086669551011,"PET":600,"CriticalSpeed":9.4176,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":9,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":86,"DTC":1.8010357949368974,"PET":680,"CriticalSpeed":10.67328,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":10,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":87,"DTC":2.624200005696788,"PET":780,"CriticalSpeed":12.242880000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":11,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":88,"DTC":3.4817884268983539,"PET":860,"CriticalSpeed":13.498560000000001,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":12,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":89,"DTC":4.3652009511815182,"PET":960,"CriticalSpeed":15.068160000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":13,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":90,"DTC":5.2683230951840079,"PET":1040,"CriticalSpeed":16.32384,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+,
+	"times":14,"actRea":0,"egoAcc":1,"actSpeed":40,"actAcc":0,"disInit":91,"DTC":6.1866863143225492,"PET":1140,"CriticalSpeed":17.893440000000002,"PETcondition":"risky","CScondition":"risky","isCollision":"Success"
+}

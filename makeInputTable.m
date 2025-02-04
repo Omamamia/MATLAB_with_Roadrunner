@@ -1,20 +1,21 @@
 % CSVファイルを読み込む
 
+csvFileName = 'inputTable_0130.csv'; % 保存するファイル名
 %Names = string(T.Properties.VariableNames);
 
 inputTable = struct('times', [], 'InitDistance', [], 'EgoInitSpeed', [], 'EgoTargetSpeed', [], 'EgoAcceleration', [] ...
                     ,'ActorInitSpeed', [],'ActorReactionTime', [],'ActorTargetSpeed', [],'ActorAcceleration', []);
 
-range_dis = 82:104;
+range_dis = 82:120;
 range_actInitSpeed = 30:48;
 range_actAcc = [0.5,1.5,2.5];
-range_actReactionTime = [1,1.5,2];
+range_actReactionTime = [0.7,1,1.3];
 
 default_times = 1;
 
 default_egoInitSpeed = 0;
 default_egoTargetSpeed = 10;
-default_egoAcceleration = 2.9;
+default_egoAcceleration = 1;
 
 default_actReactionTime = 100;
 default_actorTargetSpeed = 40;
@@ -23,6 +24,9 @@ default_actAcc = 0;
 
 for sp = range_actInitSpeed
     for dis = range_dis
+        if dis == 82
+            dis = 82.8;
+        end
         
         if sp > 40
             for acc = range_actAcc
@@ -71,7 +75,6 @@ expandedTable.ActorTargetSpeed = inputTable.ActorTargetSpeed(:);
 expandedTable.ActorAcceleration = inputTable.ActorAcceleration(:);
 
 % CSVファイルとして保存
-csvFileName = 'inputTable_vertical.csv'; % 保存するファイル名
 writetable(expandedTable, csvFileName);
 
 % 保存完了メッセージ
