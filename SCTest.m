@@ -17,11 +17,11 @@ try
     % -----------------------------------------------------------
     % ファイル名の定義（入力パラメータ、各種結果の保存先）
     % -----------------------------------------------------------
-    inputTableName = 'inputTest.csv';         % 入力パラメータが記載されたCSVファイル名
+    inputTableName = 'inputTable_0208.csv';         % 入力パラメータが記載されたCSVファイル名
     realTimeDataJsonName = 'realtimeTest.json'; % シミュレーション中のリアルタイムデータを保存するJSONファイル名
     logDataJsonName = 'resultTest.json';        % シミュレーション全体のログデータを保存するJSONファイル名
     resultsJsonName = 'resultSimpletest.json';  % 最終結果をまとめたJSONファイル名
-    resultCsvName = 'outputTest.csv';           % 最終結果をCSV形式で保存するためのファイル名
+    resultCsvName = 'outputTest_0208.csv';           % 最終結果をCSV形式で保存するためのファイル名
 
     % -----------------------------------------------------------
     % RoadRunner（シナリオシミュレーション環境）の起動と設定
@@ -128,10 +128,8 @@ try
                     createJsonFile(realTimeDataJsonName, sendData)
                     
                     % 生成したJSONデータをD-Caseサーバにアップロードする
-                    dcase.uploadEvalData(sendData);
+                    %dcase.uploadEvalData(sendData);
                     
-                    % コンソールにJSONデータを表示（デバッグ用）
-                    disp(sendData)
                 end
                 
                 % 次の更新まで、シミュレーションのステップサイズ分（例：0.02秒）待機する

@@ -1,6 +1,6 @@
 % CSVファイルを読み込む
 
-csvFileName = 'inputTable_0130.csv'; % 保存するファイル名
+csvFileName = 'inputTable_0208.csv'; % 保存するファイル名
 %Names = string(T.Properties.VariableNames);
 
 inputTable = struct('times', [], 'InitDistance', [], 'EgoInitSpeed', [], 'EgoTargetSpeed', [], 'EgoAcceleration', [] ...
@@ -9,7 +9,7 @@ inputTable = struct('times', [], 'InitDistance', [], 'EgoInitSpeed', [], 'EgoTar
 range_dis = 82:120;
 range_actInitSpeed = 30:48;
 range_actAcc = [0.5,1.5,2.5];
-range_actReactionTime = [0.7,1,1.3];
+range_actReactionTime = [0.725,1.15,1.45];
 
 default_times = 1;
 

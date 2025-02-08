@@ -223,7 +223,7 @@ classdef controlSimDatas < handle
             egoPos = getAttribute(obj.ego, "Pose");  % EgoのPose情報（通常は変換行列）
             actPos = getAttribute(obj.act, "Pose");  % ActorのPose情報
             % 得られた距離から、補正値rを引くことで、実際の接触する可能性のある距離に調整する
-            obj.realtimeData.dis = norm(egoPos.Pose(1:3, 4) - actPos.Pose(1:3, 4)) - obj.r;
+            obj.realtimeData.dis = norm(egoPos(1:3, 4) - actPos(1:3, 4))- obj.r;
             
             % 現在の衝突状態（シミュレーション中に外部で更新される値）をリアルタイムデータに反映
             obj.realtimeData.isCollision = obj.isCollision;
